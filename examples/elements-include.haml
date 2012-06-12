@@ -1,15 +1,16 @@
 
 .container
   %h2 Include Test
-  
   %hr
   
   / tries to load '[app/views]/elements/test.(haml|ctp)'
-  %= $this->element('test')
+  #cake.element
+    = $this->element('test')
   
-  %hr
+  %hr 
   
   / tries to load '[app/views]/elements/test.haml'
-  !! elements/test
+  #haml.element
+    !! elements/test
   
   
