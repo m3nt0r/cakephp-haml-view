@@ -16,14 +16,14 @@
  * @link https://github.com/glasserc/phphaml Parser
  */
 
-define('PHPHAML_VERSION', '7a4bbe6');
+define('PHPHAML_VERSION', '');
 define('PHPHAML_CACHE', TMP . 'cache' . DS . 'views');
 
 define('HAML_EXTENSION', '.haml');
 
 App::import('Core', 'Theme');
 App::import('Vendors', 'Haml.phpHaml', array(
-	'file' => 'phphaml-' . PHPHAML_VERSION . DS . 'includes' . DS . 'haml' . DS . 'HamlParser.class.php'
+	'file' => 'phphaml' . DS . 'includes' . DS . 'haml' . DS . 'HamlParser.class.php'
 ));
 
 /**
