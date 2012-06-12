@@ -1,0 +1,44 @@
+- $foo = "variable foo"
+- $bar = "variable bar"
+
+.container.text
+  %h3 String
+
+  %p= $html->link("#somelink", '#somelink')
+  
+  %p 
+    = $html->link(__("#somelink", true), '#somelink')
+    
+  %p 
+    / multiple calls in a row
+    = $html->link(__("#somelink", true), '#somelink')
+    = $html->link(__("#somelink", true), '#somelink')
+    = $html->link(__("#somelink", true), '#somelink')
+    
+  
+
+.container.array
+  %h3 Array
+
+  / this should work without a doubt, but you never know.. 
+  / i've seen many template languages fail on this or don't even support that at all
+  
+  - $variable = 'bar'
+  - $key = 'controller'
+  - $someId = '321'
+  
+  %p
+    = $html->link(__("/foo/bar", true), array('controller' => 'foo', 'action' => 'bar'))
+    Default
+  %p
+    = $html->link(__("/foo/bar", true), array('controller' => 'foo', 'action' => $variable))
+    With Variable for Value
+  %p
+    = $html->link(__("/foo/bar", true), array($key => 'foo', 'action' => $variable))
+    With Variable for Key
+  %p
+    = $html->link(__("/foo/bar/*", true), array('controller' => 'foo', 'action' => 'bar', $someId))
+    Mixed Array with variable
+  %p
+    = $html->link(__("/foo/bar/*?meh", true), array('controller' => 'foo', 'action' => 'bar', $someId, '?meh'))
+    Mixed Array with variable and string
