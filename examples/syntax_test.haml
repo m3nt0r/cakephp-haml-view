@@ -2,18 +2,8 @@
 - $bar = "variable bar"
 
 .container
-
-  .comments-test
-    %h3 Comments
-  
-    -# HAML comment. Shouldn't be rendered
-    / HTML comment. Should be rendered
-    /
-      some
-      multline
-      comment
-  
   .variables-text
+    %hr
     %h3 Variables and Text
     
     %p
@@ -32,6 +22,7 @@
       %p inline bar
   
   .id-class-attribs
+    %hr
     %h3 ID and Class Attributes
   
     %p.some-class
@@ -50,6 +41,7 @@
       Element + ID + Classes
   
   .custom-attibs
+    %hr
     %h3 Custom Attibutes
   
     .custom{:custom_attr => "custom_value"}
@@ -57,9 +49,82 @@
       #someId.some-class{:custom_attr => "custom_value"} inline bar
       #someId.some-class{:custom_attr => "custom_value", :custom_attr2 => "custom_value2"} inline bar
   
-  .conditional-comments
-    /[if IE]
-      %a{ :href => 'http://www.mozilla.com/en-US/firefox/' }
-        %h1 Get Firefox    
+  .comments-test
+    %hr
+    %h3 Comments
+    %em View Source
+    
+    %p
+      -# HAML comment. Shouldn't be rendered
+      / HTML comment. Should be rendered
+      /
+        some
+        multline
+        comment
   
+  .conditional-comments
+    %hr
+    %h3 Conditional comments
+    %em View Source
+    
+    %p
+      /[if IE]
+        %a{ :href => 'http://www.mozilla.com/en-US/firefox/' }
+          %strong Get Firefox    
+  
+  .html-escaping
+    %hr
+    %h3 HTML Escaping
+    
+    %p
+      %em Not working right now
+    %ul
+      %li
+        &= "I like cheese & crackers"
+      %li
+        = "I feel <strong></strong>!"
+      %li
+        != "I feel <strong></strong>!"
+    
+  .filters
+    %hr
+    %h3 Filters
+    
+    %p
+      %em Not working right now
+  
+  .multiline-example
+    %hr
+    %h3 Multiline Example
+    
+    %p
+      %em Not working right now
+  
+  .include-any-html 
+    %hr
+    %h3 Including raw HTML
+    
+    %p
+      <div class="wrapped">Im a wrapped in a div!</div>
+    
+  .haml-escaping
+    %hr
+    %h3 HAML Escaping
+    
+    %p
+      = $foo
+    %p
+      \= $foo
+  
+  .whitespace-removal
+    %hr
+    %h3 Whitespace Removal: > and <
+    
+    %p
+      %em > is working, < is not
+    
+    / no whitespace between tags
+    %img
+    %img>
+    %img
   
