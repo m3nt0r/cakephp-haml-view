@@ -164,10 +164,6 @@ class CakeHamlParser extends HamlParser
 		// store reference
 		$this->HamlView = $view;
 		
-		// setup parser
-		$this->noCache = (Configure::read() > 0);
-		$this->debug = (Configure::read() > 0);
-		
 		// copy common vars
 		$this->name = $view->name;
 		$this->base = $view->base;
@@ -177,7 +173,7 @@ class CakeHamlParser extends HamlParser
 		$this->layout = $view->layout;
 		$this->cacheAction = $view->cacheAction;
 		
-		parent::__construct(VIEWS, PHPHAML_CACHE, $oParent, $aDebug, $bInside);
+		parent::__construct(VIEWS, PHPHAML_CACHE, $oParent, (Configure::read() > 0), $bInside);
 	}
 
 	/**
