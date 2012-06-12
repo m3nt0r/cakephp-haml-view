@@ -91,7 +91,7 @@ class HamlView extends ThemeView {
 				
 				// Load Template and Set view data
 				$hamlSource = file_get_contents($___viewFn);
-				$__haml_parser = new HamlParser(null, PHPHAML_CACHE);
+				$__haml_parser = new CakeHamlParser($this);
 				$__haml_parser->setSource($hamlSource);
 				$__haml_parser->append($___dataForView);
 				
@@ -144,7 +144,50 @@ class HamlView extends ThemeView {
 		}
 		return $out;
 	}
-	
-	
-	
+}
+
+
+/**
+ * CakePHP HAML Parser Extension
+ * Some additions to the original parser
+ *
+ * @author Kjell Bublitz <m3nt0r.de@growinthings.de>
+ */
+class CakeHamlParser extends HamlParser 
+{ 
+	/**
+	 * Configure HamlParser and store reference to HamlView
+	 *
+	 * @param string $view 
+	 * @param string $oParent 
+	 * @param string $aDebug 
+	 * @param string $bInside 
+	 * @author Kjell Bublitz
+	 */
+	function __construct(&$view, $oParent = null, $aDebug = null, $bInside = false) 
+	{
+		$this->HamlView = $view;
+		
+		$this->name = $view->name;
+		$this->base = $view->base;
+		$this->here = $view->here;
+		$this->action = $view->action;
+		$this->controllerName = $view->name;
+		$this->layout = $view->layout;
+		$this->cacheAction = $view->cacheAction;
+		
+		$this->noCache = false;
+		
+		parent::__construct(VIEWS, PHPHAML_CACHE, $oParent, $aDebug, $bInside);
+	}
+
+	/**
+	 * Tell HAML what an element is
+	 * 
+	 * #someElement= $this->element('something')
+	 * 
+	 */
+	public function element($tpl, $params = array(), $helpers = false) {
+		return $this->HamlView->element($tpl, $params, $helpers);
+	}
 }

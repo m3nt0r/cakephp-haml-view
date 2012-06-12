@@ -24,9 +24,10 @@ and fix it as i see fit. First thing i did was adding the new doctypes outlined 
 
 ## What's missing
 
-- No support for elements (partials), yet.
 - Haml comments are not removed (```-# some comment```)
 - Some more tiny syntax stuff, see examples
+- Multiline is a little bit weird
+- ^ That includes spanning method calls over multiple lines
 
 ## Getting the goods
 

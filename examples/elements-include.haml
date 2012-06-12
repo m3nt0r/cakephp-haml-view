@@ -1,0 +1,15 @@
+
+.container
+  %h2 Include Test
+  
+  %hr
+  
+  / tries to load '[app/views]/elements/test.(haml|ctp)'
+  %= $this->element('test')
+  
+  %hr
+  
+  / tries to load '[app/views]/elements/test.haml'
+  !! elements/test
+  
+  
