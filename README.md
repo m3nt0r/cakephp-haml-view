@@ -18,6 +18,23 @@ this early state. I am almost entirely happy with the outcome, but see for yours
 
 ## What's missing
 
-- No support for elements (partials)
+- No support for elements (partials), yet.
 - Haml comments are not removed (```-# some comment```)
+- Some more tiny syntax stuff, see examples
 
+## Getting the goods
+
+    git clone --recursive git://github.com/m3nt0r/cakephp-haml-view.git haml
+    
+## Usage
+  
+  Add the View to your ```app_controller.php```
+  
+    class AppController extends Controller {
+        public $view = 'Haml.Haml'; // use twig
+    }
+    
+  Create ```.haml``` files inside your view folders
+  
+  
+  
