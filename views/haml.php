@@ -8,23 +8,18 @@
  * @author Kjell Bublitz <m3nt0r.de@gmail.com>
  * @license MIT License
  *
- * Rewriting is fun. Simplicity is bliss.
- *
  * @link http:://www.twig-project.org Twig Homepage
  * @link http://github.com/m3nt0r My GitHub
  * @link http://twitter.com/m3nt0r My Twitter
  * @link https://github.com/glasserc/phphaml Parser
  */
-
-define('PHPHAML_VERSION', '');
 define('PHPHAML_CACHE', TMP . 'cache' . DS . 'views');
-
 define('HAML_EXTENSION', '.haml');
 
+// Includes
 App::import('Core', 'Theme');
-App::import('Vendors', 'Haml.phpHaml', array(
-	'file' => 'phphaml' . DS . 'includes' . DS . 'haml' . DS . 'HamlParser.class.php'
-));
+App::import('Vendors', 'Haml.Markdown', array('file' => 'markdown' . DS . 'markdown.php'));
+App::import('Vendors', 'Haml.phpHaml', array('file' => 'phphaml' . DS . 'includes' . DS . 'haml' . DS . 'HamlParser.class.php'));
 
 /**
  * h2o-PHP CakePHP View Class
