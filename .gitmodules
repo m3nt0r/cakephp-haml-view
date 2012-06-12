@@ -1,0 +1,3 @@
+[submodule "vendors/phphaml"]
+	path = vendors/phphaml
+	url = https://github.com/m3nt0r/phphaml.git
