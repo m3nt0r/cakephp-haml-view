@@ -1,20 +1,26 @@
 # Haml for CakePHP (v0.1)
 
-This plugin for the CakePHP Framework allows you to use the Haml Templating Language.
+This plugin for the CakePHP Framework allows you to use the Haml to create your views.
 
-Apart from enabling you to use most of Haml syntax the plugin is tightly integrated with 
-the CakePHP view renderer giving you full access to helpers, objects.
+Haml? - XHTML Abstraction Markup Language.
+
+> Haml is a markup language that’s used to cleanly and simply describe the XHTML of any web document, without the use of inline code.    Haml functions as a replacement for inline page templating systems such as PHP, ERB, and ASP. However, Haml avoids the need for explicitly coding XHTML into the template, because it is actually an abstract description of the XHTML, with some code to generate dynamic content.
 
 ## Current Status
 
 The view class itself is pretty solid, however not all sorts of Haml^Cake has been thrown at it yet.
 
+Check out the **examples** directory. Converting entire CakePHP views looks perfectly possible, even at 
+this early state. I am almost entirely happy with the outcome, but see for yourself.
+
 The renderer is a copy of a [phpHaml fork i found on GitHub](https://github.com/glasserc/phphaml), 
 which is maintained by glasserc. I chose it over the sourceforge original as it contains lots 
 of contributed fixes.
 
-Check out the **examples** directory. Converting entire CakePHP views looks perfectly possible, even at 
-this early state. I am almost entirely happy with the outcome, but see for yourself.
+Furthermore, i've forked the phpHaml fork [myself](https://github.com/m3nt0r/phphaml) so i can extend
+and fix it as i see fit. First thing i did was adding the new doctypes outlined in the official 
+[HAML_REFERENCE](http://haml.info/docs/yardoc/file.HAML_REFERENCE.html).
+
 
 ## What's missing
 
