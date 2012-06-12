@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Haml for CakePHP : Abstraction Markup Language" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Haml for CakePHP</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/m3nt0r/cakephp-haml-view">View on GitHub</a>
+
+          <h1 id="project_title">Haml for CakePHP</h1>
+          <h2 id="project_tagline">Abstraction Markup Language</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/m3nt0r/cakephp-haml-view/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/m3nt0r/cakephp-haml-view/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>This plugin for the <a href="http://cakephp.org">CakePHP Framework</a> allows you to use <a href="http://haml.info/about.html">Haml</a> to create views.</p>
+
+<h2>What is Haml?</h2>
+
+<blockquote>
+<p>Haml is a markup language that’s used to cleanly and simply describe the XHTML of any web document, without the use of inline code.    Haml functions as a replacement for inline page templating systems such as PHP, ERB, and ASP. However, Haml avoids the need for explicitly coding XHTML into the template, because it is actually an abstract description of the XHTML, with some code to generate dynamic content.</p>
+</blockquote>
+
+<h2>Current Status</h2>
+
+<p>The view class itself is pretty solid, however not all sorts of Haml^Cake has been thrown at it yet.</p>
+
+<p>Check out the <strong>examples</strong> directory. Converting entire CakePHP views looks perfectly possible, even at 
+this early state. I am almost entirely happy with the outcome, but see for yourself.</p>
+
+<p>The renderer is a copy of a <a href="https://github.com/glasserc/phphaml">phpHaml fork i found on GitHub</a>, 
+which is maintained by glasserc. I chose it over the sourceforge original as it contains lots 
+of contributed fixes.</p>
+
+<p>Furthermore, i've forked the phpHaml fork <a href="https://github.com/m3nt0r/phphaml">myself</a> so i can extend
+and fix it as i see fit. First thing i did was adding the new doctypes outlined in the official 
+<a href="http://haml.info/docs/yardoc/file.HAML_REFERENCE.html">HAML_REFERENCE</a>.</p>
+
+<h2>Usage</h2>
+
+<p>Add the View to your <code>app_controller.php</code></p>
+
+<pre><code>class AppController extends Controller {
+    public $view = 'Haml.Haml'; // use twig
+}
+</code></pre>
+
+<p>Create <code>.haml</code> files inside your view folders</p>
+
+<h2>What's missing</h2>
+
+<ul>
+<li>Some more tiny syntax stuff, see "examples"</li>
+<li>Multiline is a little bit weird</li>
+<li>^ That includes spanning method calls over multiple lines</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Haml for CakePHP maintained by <a href="https://github.com/m3nt0r">m3nt0r</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
