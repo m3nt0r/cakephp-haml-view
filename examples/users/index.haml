@@ -1,0 +1,24 @@
+.container
+  %h2= __("Users", true)
+  
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th= $paginator->sort('id')
+        %th= $paginator->sort('email')
+        %th= $paginator->sort('password')
+        %th= $paginator->sort('created')
+        %th Actions
+    %tbody
+      - foreach( $users as $row )
+        %tr
+          %td= $row['User']['id']
+          %td= $row['User']['email']
+          %td= $row['User']['password']
+          %td= $row['User']['created']
+          %td= $html->link('Edit', array('action' => 'edit', $row['User']['id']))
+        
+      
+    
+  
+

@@ -1,0 +1,59 @@
+- $foo = "variable foo"
+- $bar = "variable bar"
+
+.container
+
+  .comments-test
+    %h3 Comments
+  
+    -# HAML comment. Shouldn't be rendered
+    / HTML comment. Should be rendered
+    /
+      some
+      multline
+      comment
+  
+  .variables-text
+    %h3 Variables and Text
+    
+    %p
+      inline foo
+      inline bar
+  
+    %p
+      inline foo
+      = $bar
+    
+    %p
+      = $foo
+      inline bar
+  
+    %p= $bar
+      %p inline bar
+  
+  .id-class-attribs
+    %h3 ID and Class Attributes
+  
+    %p.some-class
+      Element + Class
+    
+    %p.some-class.andAnother
+      Element + Classes
+    
+    %p#someId
+      Element + ID
+    
+    %p#someId.some-class
+      Element + ID + Class
+  
+    %p#someId.some-class.andAnother
+      Element + ID + Classes
+  
+  .custom-attibs
+    %h3 Custom Attibutes
+  
+    .custom{:custom_attr => "custom_value"}
+      #someId{:custom_attr => "custom_value"}= $foo
+      #someId.some-class{:custom_attr => "custom_value"} inline bar
+      #someId.some-class{:custom_attr => "custom_value", :custom_attr2 => "custom_value2"} inline bar
+
