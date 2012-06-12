@@ -56,4 +56,10 @@
       #someId{:custom_attr => "custom_value"}= $foo
       #someId.some-class{:custom_attr => "custom_value"} inline bar
       #someId.some-class{:custom_attr => "custom_value", :custom_attr2 => "custom_value2"} inline bar
-
+  
+  .conditional-comments
+    /[if IE]
+      %a{ :href => 'http://www.mozilla.com/en-US/firefox/' }
+        %h1 Get Firefox    
+  
+  
